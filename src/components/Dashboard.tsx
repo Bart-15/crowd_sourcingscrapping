@@ -107,26 +107,50 @@ function Dashboard() {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="mb-4 flex items-center gap-2">
-                <Avatar>
-                  <AvatarImage src="https://github.com/shadcn.png" />
-                  <AvatarFallback>CN</AvatarFallback>
-                </Avatar>
-                <h1 className="text-[18px]">Kenneth</h1>
+              <div>
+                <div className="mb-4 flex items-center gap-2">
+                  <Avatar>
+                    <AvatarImage src="https://github.com/shadcn.png" />
+                    <AvatarFallback>CN</AvatarFallback>
+                  </Avatar>
+                  <h1 className="text-[18px]">Kenneth</h1>
+                </div>
+                <div className="bg-red mb-2 flex gap-1">
+                  <Star className="text-yellow-400" size={14} />
+                  <Star className="text-yellow-400" size={14} />
+                  <Star className="text-yellow-400" size={14} />
+                  <Star className="text-yellow-400" size={14} />
+                  <Star className="text-yellow-400" size={14} />
+                </div>
+                <p className="text-[14px] text-gray-500">
+                  I’ve been using Globe Telecom for some time now, and I have to
+                  say, I'm really impressed with their service improvements!
+                  It’s great to see that they've started increasing the Mbps,
+                  which is definitely a step in the right direction.
+                </p>
               </div>
-              <div className="bg-red mb-2 flex gap-1">
-                <Star className="text-yellow-400" size={14} />
-                <Star className="text-yellow-400" size={14} />
-                <Star className="text-yellow-400" size={14} />
-                <Star className="text-yellow-400" size={14} />
-                <Star className="text-yellow-400" size={14} />
+              <div className="mt-5">
+                <div className="mb-4 flex items-center gap-2">
+                  <Avatar>
+                    <AvatarImage src="https://github.com/shadcn.png" />
+                    <AvatarFallback>CN</AvatarFallback>
+                  </Avatar>
+                  <h1 className="text-[18px]">Kenneth</h1>
+                </div>
+                <div className="bg-red mb-2 flex gap-1">
+                  <Star className="text-yellow-400" size={14} />
+                  <Star className="text-yellow-400" size={14} />
+                  <Star className="text-yellow-400" size={14} />
+                  <Star className="text-yellow-400" size={14} />
+                  <Star className="text-yellow-400" size={14} />
+                </div>
+                <p className="text-[14px] text-gray-500">
+                  I’ve been using Globe Telecom for some time now, and I have to
+                  say, I'm really impressed with their service improvements!
+                  It’s great to see that they've started increasing the Mbps,
+                  which is definitely a step in the right direction.
+                </p>
               </div>
-              <p className="text-[14px] text-gray-500">
-                I’ve been using Globe Telecom for some time now, and I have to
-                say, I'm really impressed with their service improvements! It’s
-                great to see that they've started increasing the Mbps, which is
-                definitely a step in the right direction.
-              </p>
             </CardContent>
           </Card>
         </div>

@@ -1,7 +1,8 @@
 'use client';
-
+import { Label } from '@/components/ui/label';
 import { Bar, BarChart, CartesianGrid, XAxis } from 'recharts';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import {
   ChartConfig,
   ChartContainer,
@@ -35,11 +36,23 @@ function MyChart() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Summary Data</CardTitle>
+        <CardTitle className="flex justify-between">
+          <h1>Summary Data</h1>
+          <RadioGroup defaultValue="comfortable" className="flex">
+            <div className="flex items-center space-x-2">
+              <RadioGroupItem value="default" id="r1" />
+              <Label htmlFor="r1">Positive</Label>
+            </div>
+            <div className="flex items-center space-x-2">
+              <RadioGroupItem value="comfortable" id="r2" />
+              <Label htmlFor="r2">Negative</Label>
+            </div>
+          </RadioGroup>
+        </CardTitle>
       </CardHeader>
       <CardContent>
         <ChartContainer config={chartConfig} className="h-[400px] w-full">
-          <BarChart data={chartData}>
+          <BarChart accessibilityLayer data={chartData}>
             <CartesianGrid vertical={false} />
             <XAxis
               dataKey="month"
