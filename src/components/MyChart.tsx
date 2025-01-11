@@ -12,21 +12,21 @@ import {
 } from '@/components/ui/chart';
 
 const chartData = [
-  { month: 'January', desktop: 186, mobile: 80 },
-  { month: 'February', desktop: 305, mobile: 200 },
-  { month: 'March', desktop: 237, mobile: 120 },
-  { month: 'April', desktop: 73, mobile: 190 },
-  { month: 'May', desktop: 209, mobile: 130 },
-  { month: 'June', desktop: 214, mobile: 140 },
+  { month: 'January', Positive: 186, Negative: 80 },
+  { month: 'February', Positive: 305, Negative: 200 },
+  { month: 'March', Positive: 237, Negative: 120 },
+  { month: 'April', Positive: 73, Negative: 190 },
+  { month: 'May', Positive: 209, Negative: 130 },
+  { month: 'June', Positive: 214, Negative: 140 },
 ];
 
 const chartConfig = {
-  desktop: {
-    label: 'Desktop',
+  Positive: {
+    label: 'Positive',
     color: '#2563eb',
   },
-  mobile: {
-    label: 'Mobile',
+  Negative: {
+    label: 'Negative',
     color: '#60a5fa',
   },
 } satisfies ChartConfig;
@@ -34,22 +34,35 @@ const chartConfig = {
 function MyChart() {
   return (
     <Card>
-      <ChartContainer config={chartConfig} className="h-[400px] w-full">
-        <BarChart accessibilityLayer data={chartData}>
-          <CartesianGrid vertical={false} />
-          <XAxis
-            dataKey="month"
-            tickLine={false}
-            tickMargin={10}
-            axisLine={false}
-            tickFormatter={(value) => value.slice(0, 3)}
-          />
-          <ChartTooltip content={<ChartTooltipContent />} />
-          <ChartLegend content={<ChartLegendContent />} />
-          <Bar dataKey="desktop" fill="var(--color-desktop)" radius={4} />
-          <Bar dataKey="mobile" fill="var(--color-mobile)" radius={4} />
-        </BarChart>
-      </ChartContainer>
+      <CardHeader>
+        <CardTitle>Summary Data</CardTitle>
+      </CardHeader>
+      <CardContent>
+        <ChartContainer config={chartConfig} className="h-[400px] w-full">
+          <BarChart data={chartData}>
+            <CartesianGrid vertical={false} />
+            <XAxis
+              dataKey="month"
+              tickLine={false}
+              tickMargin={10}
+              axisLine={false}
+              tickFormatter={(value) => value.slice(0, 3)}
+            />
+            <ChartTooltip content={<ChartTooltipContent />} />
+            <ChartLegend content={<ChartLegendContent />} />
+            <Bar
+              dataKey="Positive"
+              fill={chartConfig.Positive.color}
+              radius={4}
+            />
+            <Bar
+              dataKey="Negative"
+              fill={chartConfig.Negative.color}
+              radius={4}
+            />
+          </BarChart>
+        </ChartContainer>
+      </CardContent>
     </Card>
   );
 }
