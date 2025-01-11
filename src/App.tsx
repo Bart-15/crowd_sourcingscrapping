@@ -1,10 +1,9 @@
-import './App.css';
+import Dashboard from './components/Dashboard';
 import './index.css';
-import { Button } from '@/components/ui/button';
 function App() {
   return (
     <>
-      <Button>Click me</Button>
+      <Dashboard />
     </>
   );
 }
