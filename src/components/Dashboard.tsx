@@ -9,8 +9,26 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { useEffect, useState } from 'react';
+
 
 function Dashboard() {
+
+  const [data, setData] = useState([]);
+  const API = "localhost:5173/api"
+  
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(API);
+        const result = await response.json();
+        setData(result); 
+      } catch(error) {
+        console.error(error);
+      }
+    } 
+  })
+
   return (
     <>
       <Header />
@@ -78,6 +96,9 @@ function Dashboard() {
               </div>
             </div>
           </CardContent>
+        </Card>
+        <Card>
+          <p>{data ? data : "Wump wump"}</p>
         </Card>
       </div>
     </>
