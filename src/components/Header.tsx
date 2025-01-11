@@ -1,10 +1,15 @@
-import React from 'react';
+import { Download } from 'lucide-react';
+
+import { Button } from '@/components/ui/button';
 
 function Header() {
   return (
     <>
-      <div className="w-full border-b border-black px-5 py-5">
-        <h1 className="text-[20px] font-extrabold">Crowd Resourcing</h1>
+      <div className="bordesr-b flex w-full justify-between border border-gray-400 px-5 py-7">
+        <h1 className="text-[24px] font-extrabold">Crowd Sourcing</h1>
+        <Button className="rounded-xl">
+          <Download /> Export
+        </Button>
       </div>
     </>
   );
