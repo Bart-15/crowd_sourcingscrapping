@@ -1,9 +1,5 @@
 import pandas as pd
 data = pd.read_csv("review.csv", sep=",")
 print(data.head(2))
-with open('file.json', 'w') as f:
+with open('review.json', 'w') as f:
     f.write(data.to_json(orient='records', lines=True))
-
-# check
-data = pd.read_json("review.json", lines=True)
-print(data.head(2))
